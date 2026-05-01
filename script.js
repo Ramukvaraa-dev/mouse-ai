@@ -26,7 +26,7 @@ async function sendMessage() {
   chat.scrollTop = chat.scrollHeight;
 
   try {
-    const response = await fetch("https://YOUR-BACKEND.onrender.com/chat", {
+    const response = await fetch("https://mouse-ai-backend.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
