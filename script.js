@@ -17,7 +17,7 @@ async function sendMessage() {
   const chat = document.getElementById("chat");
 
   chat.innerHTML += `
-    <p style="text-align:right; color:#2563eb;">
+    <p style="text-align:right; color:#2563eb; margin:8px;">
       <b>You:</b> ${message}
     </p>
   `;
@@ -36,13 +36,10 @@ async function sendMessage() {
 
     const data = await response.json();
 
-    const reply =
-      data.choices?.[0]?.message?.content ||
-      data.reply ||
-      "No response";
+    const reply = data.reply || "No response from Mouse AI.";
 
     chat.innerHTML += `
-      <p style="color:#111827;">
+      <p style="color:#111827; margin:8px;">
         <b>Mouse AI:</b> ${reply}
       </p>
     `;
@@ -51,8 +48,8 @@ async function sendMessage() {
 
   } catch (error) {
     chat.innerHTML += `
-      <p style="color:red;">
-        <b>Error:</b> Could not connect to AI backend.
+      <p style="color:red; margin:8px;">
+        <b>Error:</b> Could not connect to backend.
       </p>
     `;
   }
